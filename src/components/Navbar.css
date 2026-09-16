@@ -1,0 +1,96 @@
+﻿.navbar {
+  background-color: white;
+  border-bottom: 1px solid #dde2ee;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.navbar-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 65px;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--azul-oscuro);
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.nav-links a {
+  color: var(--gris);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.nav-links a:hover {
+  color: var(--azul-oscuro);
+}
+
+/* NavLink agrega la clase active a la página actual */
+.nav-links a.active {
+  color: var(--azul-oscuro);
+  border-bottom: 2px solid var(--amarillo);
+}
+
+.nav-links .cart-link {
+  background-color: var(--azul-oscuro);
+  color: white;
+  padding: 6px 16px;
+  border-radius: 20px;
+  border-bottom: none;
+}
+
+.nav-links .cart-link:hover,
+.nav-links .cart-link.active {
+  color: white;
+  border-bottom: none;
+}
+
+.cart-count {
+  background-color: var(--amarillo);
+  color: var(--azul-oscuro);
+  border-radius: 50%;
+  padding: 0 7px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 26px;
+  cursor: pointer;
+}
+
+@media (max-width: 720px) {
+  .menu-btn {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 65px;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    background-color: white;
+    padding: 20px;
+    border-bottom: 1px solid #dde2ee;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+}
