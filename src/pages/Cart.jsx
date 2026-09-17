@@ -21,7 +21,7 @@
                 ${producto.precio.toLocaleString('es-CO')}
               </span>
             </div>
-            <button className="btn-eliminar" onClick={() => onEliminar(producto.id)}>
+            <button className="btn-eliminar" onClick={() => onEliminar(index)}>
               Eliminar
             </button>
           </div>

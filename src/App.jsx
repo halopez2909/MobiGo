@@ -18,8 +18,8 @@ function App() {
   };
 
   // 3. Función para eliminar (usando filter)
-  const eliminarDelCarrito = (id) => {
-    setCarrito(carrito.filter((item) => item.id !== id));
+  const eliminarDelCarrito = (indice) => {
+    setCarrito(carrito.filter((item, i) => i !== indice));
   };
 
   // 4. Calcular el total (usando reduce)

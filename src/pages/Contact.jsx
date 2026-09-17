@@ -30,7 +30,7 @@ function Contact() {
     };
 
     const erroresFiltrados = Object.fromEntries(
-      Object.entries(nuevosErrores).filter(([_, valor]) => valor !== "")
+      Object.entries(nuevosErrores).filter((entrada) => entrada[1] !== "")
     );
 
     if (Object.keys(erroresFiltrados).length > 0) {
