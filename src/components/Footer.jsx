@@ -18,6 +18,7 @@ function Footer() {
           <Link to="/productos">Productos</Link>
           <Link to="/carrito">Carrito</Link>
           <Link to="/contacto">Contacto</Link>
+          <Link to="/admin">Administracion</Link>
         </div>
 
         <div>

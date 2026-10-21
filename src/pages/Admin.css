@@ -1,0 +1,280 @@
+﻿/* ----- Pestanas ----- */
+.admin-tabs {
+  display: flex;
+  gap: 10px;
+  margin: 20px 0;
+  border-bottom: 1px solid #dde2ee;
+}
+
+.tab {
+  background: none;
+  border: none;
+  border-bottom: 3px solid transparent;
+  padding: 10px 18px;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--gris);
+  cursor: pointer;
+}
+
+.tab.activa {
+  color: var(--azul-oscuro);
+  border-bottom-color: var(--amarillo);
+}
+
+/* ----- Mensajes ----- */
+.admin-aviso,
+.admin-error,
+.admin-cargando,
+.admin-vacio {
+  padding: 12px 16px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  font-size: 15px;
+}
+
+.admin-aviso {
+  background-color: #e8f4e8;
+  color: #1a5c1a;
+}
+
+.admin-error {
+  background-color: #ffeaea;
+  color: #c0392b;
+}
+
+.admin-cargando,
+.admin-vacio {
+  background-color: white;
+  border: 1px dashed #dde2ee;
+  color: var(--gris);
+  text-align: center;
+  padding: 40px;
+}
+
+/* ----- Tabla ----- */
+.tabla-scroll {
+  overflow-x: auto;
+}
+
+.admin-tabla {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  font-size: 15px;
+}
+
+.admin-tabla th {
+  background-color: var(--azul-oscuro);
+  color: white;
+  text-align: left;
+  padding: 12px 14px;
+  font-size: 14px;
+}
+
+.admin-tabla td {
+  padding: 12px 14px;
+  border-bottom: 1px solid #eef1f7;
+}
+
+.admin-tabla tr:last-child td {
+  border-bottom: none;
+}
+
+.admin-tabla .motivo {
+  color: var(--gris);
+  max-width: 260px;
+}
+
+.btn-eliminar,
+.btn-restaurar {
+  border: none;
+  border-radius: 6px;
+  padding: 7px 14px;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  color: white;
+  cursor: pointer;
+}
+
+.btn-eliminar {
+  background-color: #e03131;
+}
+
+.btn-eliminar:hover {
+  background-color: #c92a2a;
+}
+
+.btn-restaurar {
+  background-color: #1a5c1a;
+}
+
+.btn-restaurar:hover {
+  background-color: #144914;
+}
+
+/* ----- Formulario de alta ----- */
+.btn-nuevo {
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 15px;
+  background-color: transparent;
+  margin-bottom: 18px;
+}
+
+.admin-form {
+  background-color: white;
+  border: 1px solid #dde2ee;
+  border-radius: 12px;
+  padding: 22px;
+  margin-bottom: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.admin-form-fila {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.admin-form-fila label {
+  flex: 1;
+  min-width: 180px;
+}
+
+.admin-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--azul-oscuro);
+}
+
+.admin-form input,
+.admin-form select {
+  padding: 10px 12px;
+  border: 1px solid #dde2ee;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.admin-form input:focus,
+.admin-form select:focus {
+  outline: 2px solid var(--azul);
+  border-color: var(--azul);
+}
+
+.admin-modelos {
+  border: 1px solid #dde2ee;
+  border-radius: 8px;
+  padding: 14px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.admin-modelos legend {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--azul-oscuro);
+  padding: 0 6px;
+}
+
+.admin-modelos .check {
+  flex-direction: row;
+  align-items: center;
+  gap: 7px;
+  font-weight: 400;
+}
+
+.admin-form .btn-primary {
+  align-self: flex-start;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 15px;
+}
+
+/* ----- Ventana de confirmacion ----- */
+.modal-fondo {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(20, 33, 61, 0.55);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  z-index: 50;
+}
+
+.modal {
+  background-color: white;
+  border-radius: 14px;
+  padding: 26px;
+  max-width: 460px;
+  width: 100%;
+}
+
+.modal h3 {
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+.modal p {
+  color: var(--gris);
+  font-size: 14px;
+  margin-bottom: 16px;
+}
+
+.modal label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--azul-oscuro);
+}
+
+.modal textarea {
+  min-height: 80px;
+  padding: 10px 12px;
+  border: 1px solid #dde2ee;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 400;
+  resize: vertical;
+}
+
+.modal textarea:focus {
+  outline: 2px solid var(--azul);
+  border-color: var(--azul);
+}
+
+.modal-acciones {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.modal-acciones .btn {
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 15px;
+  background-color: transparent;
+}
+
+@media (max-width: 600px) {
+  .admin-form-fila {
+    flex-direction: column;
+  }
+}

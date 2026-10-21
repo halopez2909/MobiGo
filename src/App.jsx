@@ -6,6 +6,7 @@ import Products from './pages/Products';
 import Cart from './pages/Cart';
 import Contact from './pages/Contact';
 import NotFound from './pages/NotFound';
+import Admin from './pages/Admin';
 import { useState } from 'react';
 
 function App() {
@@ -47,6 +48,7 @@ function App() {
           } />
           
           <Route path="/contacto" element={<Contact />} />
+          <Route path="/admin" element={<Admin />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
