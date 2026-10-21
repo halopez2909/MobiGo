@@ -1,5 +1,6 @@
 ﻿import { useState } from 'react'
 import { Link, NavLink } from 'react-router-dom'
+import { CartDropZone } from './CartDropZone'
 import './Navbar.css'
 
 const links = [
@@ -8,7 +9,7 @@ const links = [
   { id: 3, ruta: '/contacto', texto: 'Contacto' },
 ]
 
-function Navbar({ cantidadCarrito }) {
+function Navbar({ cantidadCarrito, agregarAlCarrito }) {
   const [menuAbierto, setMenuAbierto] = useState(false)
 
   const toggleMenu = () => {
@@ -36,6 +37,9 @@ function Navbar({ cantidadCarrito }) {
               {link.texto}
             </NavLink>
           ))}
+
+          {/* Zona de Drop limpia sin contador repetido */}
+          <CartDropZone agregarAlCarrito={agregarAlCarrito} />
 
           <NavLink to="/carrito" className="cart-link" onClick={cerrarMenu}>
             Carrito <span className="cart-count">{cantidadCarrito}</span>

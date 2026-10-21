@@ -16,7 +16,11 @@ function ProductCard({ producto, agregarAlCarrito }) {
   }
 
   return (
-    <div className="product-card">
+    <div 
+      className="product-card"
+      draggable
+      onDragStart={(e) => e.dataTransfer.setData('application/json', JSON.stringify(producto))}
+    >
       <ProductImage src={producto.imagen_url} alt={producto.nombre} />
 
       <span className="product-category">{producto.categoria}</span>
