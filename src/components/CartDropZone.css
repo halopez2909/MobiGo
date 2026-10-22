@@ -1,0 +1,30 @@
+.cart-drop-zone {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px;
+  border: 2px dashed #93c5fd;
+  border-radius: 20px;
+  background-color: #f8fafc;
+  color: #334155;
+  font-size: 0.8rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+.cart-drop-zone.drag-over {
+  background-color: #2563eb;
+  color: #ffffff;
+  border-style: solid;
+  border-color: #1d4ed8;
+  transform: scale(1.05);
+}
+
+.cart-drop-icon {
+  font-size: 1rem;
+}
+
+.cart-drop-text {
+  font-size: 0.78rem;
+}

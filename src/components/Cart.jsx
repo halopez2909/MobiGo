@@ -1,9 +1,17 @@
-﻿function Cart({ carrito, total, onEliminar }) {
+import React from 'react';
+import { Link } from 'react-router-dom';
+
+function Cart({ carrito, total, onEliminar, onVaciar }) {
   if (carrito.length === 0) {
     return (
       <div className="cart-container empty-cart">
         <h2>Tu carrito</h2>
         <p>El carrito está vacío. ¡Ve a la sección de productos para agregar accesorios!</p>
+        <div style={{ marginTop: '20px' }}>
+          <Link to="/productos" className="btn btn-primary">
+            Ir al Catálogo
+          </Link>
+        </div>
       </div>
     );
   }
@@ -30,6 +38,16 @@
       
       <div className="cart-summary">
         <h3>Total a pagar: ${total.toLocaleString('es-CO')}</h3>
+        
+        {/* Botones para vaciar e ir al formulario de pago */}
+        <div className="cart-actions" style={{ display: 'flex', gap: '10px', marginTop: '15px', justifyContent: 'center' }}>
+          <button className="btn btn-secondary" onClick={onVaciar}>
+            Vaciar Carrito
+          </button>
+          <Link to="/checkout" className="btn btn-primary" style={{ textDecoration: 'none' }}>
+            Proceder al Pago
+          </Link>
+        </div>
       </div>
     </div>
   );
