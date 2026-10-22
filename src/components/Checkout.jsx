@@ -66,6 +66,7 @@ function Checkout({ carrito, total, onVaciar }) {
         cliente_celular: formData.celular,
         ciudad: formData.ciudad,
         metodo_pago: formData.metodoPago,
+        observaciones: formData.observaciones,
         total: total
       };
 
