@@ -278,3 +278,78 @@
     flex-direction: column;
   }
 }
+
+/* ----- Editar y codigos ----- */
+.admin-form-titulo {
+  font-weight: 600;
+  color: var(--azul-oscuro);
+  margin-bottom: 4px;
+}
+
+.acciones {
+  display: flex;
+  gap: 8px;
+}
+
+.btn-editar {
+  border: none;
+  border-radius: 6px;
+  padding: 7px 14px;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  color: white;
+  cursor: pointer;
+  background-color: #1864ab;
+}
+
+.btn-editar:hover {
+  background-color: #145591;
+}
+
+.admin-tabla .codigo {
+  font-family: Consolas, monospace;
+  font-weight: 600;
+}
+
+.estado {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.estado-emitido {
+  background-color: #e7f0fb;
+  color: #1864ab;
+}
+
+.estado-verificado {
+  background-color: #e8f4e8;
+  color: #1a5c1a;
+}
+
+.lote-nuevo {
+  background-color: #fff8e6;
+  border: 1px solid var(--amarillo);
+  border-radius: 10px;
+  padding: 16px;
+  margin-bottom: 18px;
+}
+
+.lote-lista {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.codigo-chip {
+  background-color: white;
+  border: 1px dashed var(--gris);
+  border-radius: 6px;
+  padding: 7px 12px;
+  font-family: Consolas, monospace;
+  font-weight: 600;
+}

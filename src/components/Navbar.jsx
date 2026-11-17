@@ -1,4 +1,4 @@
-﻿import { useState } from 'react'
+import { useState } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import { CartDropZone } from './CartDropZone'
 import './Navbar.css'
@@ -7,6 +7,9 @@ const links = [
   { id: 1, ruta: '/', texto: 'Inicio' },
   { id: 2, ruta: '/productos', texto: 'Productos' },
   { id: 3, ruta: '/contacto', texto: 'Contacto' },
+  { id: 4, ruta: '/carga', texto: 'Carga rápida' },
+  { id: 5, ruta: '/medidor', texto: 'Tamaño real' },
+  { id: 6, ruta: '/verificar', texto: 'Verificar' },
 ]
 
 function Navbar({ cantidadCarrito, agregarAlCarrito }) {

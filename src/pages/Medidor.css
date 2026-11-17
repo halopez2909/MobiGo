@@ -1,0 +1,123 @@
+.medidor {
+  max-width: 900px;
+}
+
+.calibrar {
+  background-color: white;
+  border: 1px solid #dde2ee;
+  border-radius: 14px;
+  padding: 28px;
+  margin-top: 24px;
+}
+
+.calibrar-paso {
+  margin-bottom: 22px;
+  font-size: 16px;
+}
+
+.tarjeta-modelo {
+  aspect-ratio: 85.6 / 53.98;
+  background: linear-gradient(135deg, var(--azul-oscuro), #27406e);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.calibrar-barra {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.calibrar .btn {
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 16px;
+}
+
+.calibrar-nota {
+  margin-top: 18px;
+  color: var(--gris);
+  font-size: 14px;
+}
+
+.medidor-barra {
+  display: flex;
+  align-items: flex-end;
+  gap: 16px;
+  margin: 24px 0;
+  flex-wrap: wrap;
+}
+
+.medidor-barra label {
+  flex: 1;
+  min-width: 220px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--azul-oscuro);
+}
+
+.medidor-barra select {
+  padding: 12px 14px;
+  border: 1px solid #dde2ee;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.medidor-barra .btn {
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 15px;
+  background-color: transparent;
+}
+
+.medidor-vacio {
+  background-color: white;
+  border: 1px dashed #dde2ee;
+  border-radius: 10px;
+  padding: 40px;
+  text-align: center;
+  color: var(--gris);
+}
+
+.medidor-resultado {
+  background-color: white;
+  border: 1px solid #dde2ee;
+  border-radius: 14px;
+  padding: 28px;
+  text-align: center;
+}
+
+.medidor-medida {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--azul-oscuro);
+  margin-bottom: 22px;
+}
+
+.pieza {
+  margin: 0 auto;
+  background: linear-gradient(135deg, #2f4a7d, var(--azul-oscuro));
+  border-radius: 12px;
+  box-shadow: 0 10px 24px rgba(20, 33, 61, 0.25);
+}
+
+.medidor-nota {
+  margin-top: 22px;
+  color: var(--gris);
+  font-size: 15px;
+}
+
+.medidor-grande {
+  color: var(--gris);
+  font-size: 16px;
+  line-height: 1.6;
+}
