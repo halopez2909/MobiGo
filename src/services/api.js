@@ -1,4 +1,4 @@
-﻿// Capa de servicios: TODA la comunicacion con la base de datos pasa por aca.
+// Capa de servicios: TODA la comunicacion con la base de datos pasa por aca.
 // Ningun componente llama a fetch directamente.
 
 const URL_BASE = import.meta.env.VITE_SUPABASE_URL
@@ -76,6 +76,14 @@ export async function actualizarProducto(id, cambios) {
     body: JSON.stringify(cambios),
   })
   return filas[0]
+}
+
+// Borra las compatibilidades viejas y pone las nuevas
+export async function reemplazarModelos(productoId, nombresModelos) {
+  await pedir(`/producto_modelo?producto_id=eq.${productoId}`, { method: "DELETE" })
+  if (nombresModelos.length > 0) {
+    await vincularModelos(productoId, nombresModelos)
+  }
 }
 
 // Crea las filas de la tabla intermedia a partir de los nombres de modelo
@@ -194,7 +202,93 @@ export async function crearPedido(datosPedido, items) {
       headers: { Prefer: "return=minimal" },
       body: JSON.stringify(filas),
     })
+
+    await descontarStock(items)
   }
 
   return pedido
+}
+
+// Baja el stock de cada producto comprado
+async function descontarStock(items) {
+  for (const item of items) {
+    const producto = await getProducto(item.id)
+    if (!producto) continue
+
+    const restante = producto.stock - (item.cantidad || 1)
+
+    await pedir(`/productos?id=eq.${item.id}`, {
+      method: "PATCH",
+      headers: { Prefer: "return=minimal" },
+      body: JSON.stringify({ stock: restante < 0 ? 0 : restante }),
+    })
+  }
+}
+
+/* ---------- Sello de autenticidad ---------- */
+
+// Arma un codigo tipo MG-4K7P-9X2M
+// No usamos O, 0, I, L ni 1 para que nadie los confunda al escribirlos
+function generarCodigo() {
+  const letras = "ABCDEFGHJKMNPQRSTUVWXYZ23456789"
+  let bloque1 = ""
+  let bloque2 = ""
+  for (let i = 0; i < 4; i++) {
+    bloque1 = bloque1 + letras[Math.floor(Math.random() * letras.length)]
+    bloque2 = bloque2 + letras[Math.floor(Math.random() * letras.length)]
+  }
+  return "MG-" + bloque1 + "-" + bloque2
+}
+
+// Crea un lote de codigos para un producto
+export async function generarCodigos(producto, cantidad) {
+  const filas = []
+  for (let i = 0; i < cantidad; i++) {
+    filas.push({
+      codigo: generarCodigo(),
+      producto_id: producto.id,
+      nombre_producto: producto.nombre,
+      estado: "emitido",
+    })
+  }
+
+  return await pedir("/unidades", {
+    method: "POST",
+    headers: { Prefer: "return=representation" },
+    body: JSON.stringify(filas),
+  })
+}
+
+export async function getUnidades() {
+  return await pedir("/unidades?select=*&order=creado_en.desc")
+}
+
+// El corazon del sello: busca el codigo y lo marca como verificado
+export async function verificarCodigo(codigo) {
+  const limpio = codigo.trim().toUpperCase()
+  const filas = await pedir(`/unidades?codigo=eq.${limpio}&select=*`)
+
+  // Caso 1: el codigo no existe
+  if (!filas || filas.length === 0) {
+    return { resultado: "no_existe" }
+  }
+
+  const unidad = filas[0]
+
+  // Caso 2: alguien ya lo verifico antes
+  if (unidad.estado === "verificado") {
+    return { resultado: "repetido", unidad: unidad }
+  }
+
+  // Caso 3: es valido, lo marcamos. Esto es la operacion UPDATE
+  const actualizadas = await pedir(`/unidades?id=eq.${unidad.id}`, {
+    method: "PATCH",
+    headers: { Prefer: "return=representation" },
+    body: JSON.stringify({
+      estado: "verificado",
+      verificado_en: new Date().toISOString(),
+    }),
+  })
+
+  return { resultado: "valido", unidad: actualizadas[0] }
 }

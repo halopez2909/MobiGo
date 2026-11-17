@@ -1,0 +1,82 @@
+.verificar {
+  max-width: 620px;
+}
+
+.verificar-form {
+  display: flex;
+  gap: 12px;
+  margin: 24px 0;
+  flex-wrap: wrap;
+}
+
+.verificar-form input {
+  flex: 1;
+  min-width: 220px;
+  padding: 14px 16px;
+  border: 2px solid #dde2ee;
+  border-radius: 10px;
+  font-family: Consolas, monospace;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+.verificar-form input:focus {
+  outline: none;
+  border-color: var(--azul);
+}
+
+.verificar-form .btn {
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 16px;
+}
+
+.tarjeta {
+  border-radius: 14px;
+  padding: 24px;
+  margin-top: 10px;
+  border-left: 8px solid;
+}
+
+.tarjeta p {
+  margin-bottom: 6px;
+}
+
+.tarjeta-titulo {
+  font-size: 21px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.tarjeta-producto {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.tarjeta.valida {
+  background-color: #e8f4e8;
+  border-left-color: #1a5c1a;
+  color: #144014;
+}
+
+.tarjeta.invalida {
+  background-color: #ffeaea;
+  border-left-color: #c0392b;
+  color: #8e2419;
+}
+
+.tarjeta.repetida {
+  background-color: #fff6e0;
+  border-left-color: #d98e04;
+  color: #6b4700;
+}
+
+.verificar-ayuda {
+  margin-top: 28px;
+  padding-top: 18px;
+  border-top: 1px solid #dde2ee;
+  color: var(--gris);
+  font-size: 15px;
+}

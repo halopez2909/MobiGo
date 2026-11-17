@@ -1,0 +1,131 @@
+.carga {
+  max-width: 720px;
+}
+
+.carga-form {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin: 24px 0;
+}
+
+.carga-form label {
+  flex: 1;
+  min-width: 200px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--azul-oscuro);
+}
+
+.carga-form select,
+.carga-form input {
+  padding: 12px 14px;
+  border: 1px solid #dde2ee;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.carga-form select:focus,
+.carga-form input:focus {
+  outline: 2px solid var(--azul);
+  border-color: var(--azul);
+}
+
+.carga-vacio {
+  background-color: white;
+  border: 1px dashed #dde2ee;
+  border-radius: 10px;
+  padding: 40px;
+  text-align: center;
+  color: var(--gris);
+}
+
+.carga-actual {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--azul-oscuro);
+  color: white;
+  border-radius: 12px;
+  padding: 18px 22px;
+  margin-bottom: 18px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.carga-actual strong {
+  font-size: 24px;
+}
+
+.carga-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.carga-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background-color: white;
+  border: 1px solid #dde2ee;
+  border-radius: 12px;
+  padding: 16px 20px;
+  flex-wrap: wrap;
+}
+
+.carga-item-datos {
+  flex: 1;
+  min-width: 160px;
+}
+
+.carga-item-nombre {
+  font-weight: 600;
+  color: var(--azul-oscuro);
+}
+
+.carga-item-precio {
+  color: var(--gris);
+  font-size: 15px;
+}
+
+.carga-item-tiempo {
+  display: flex;
+  flex-direction: column;
+  min-width: 170px;
+}
+
+.carga-item-tiempo strong {
+  font-size: 22px;
+  color: var(--azul-oscuro);
+}
+
+.carga-ahorro {
+  font-size: 14px;
+  color: #1a5c1a;
+  font-weight: 600;
+}
+
+.carga-igual {
+  font-size: 14px;
+  color: var(--gris);
+}
+
+.carga-item .btn {
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 15px;
+}
+
+.carga-nota {
+  margin-top: 24px;
+  padding-top: 16px;
+  border-top: 1px solid #dde2ee;
+  color: var(--gris);
+  font-size: 14px;
+}

@@ -1,4 +1,4 @@
-﻿import { Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
@@ -8,6 +8,9 @@ import Contact from './pages/Contact';
 import Checkout from './components/Checkout'; // <--- 1. Importa Checkout (o ajusta la ruta si lo pusiste en pages/)
 import NotFound from './pages/NotFound';
 import Admin from './pages/Admin';
+import Verificar from './pages/Verificar';
+import Carga from './pages/Carga';
+import Medidor from './pages/Medidor';
 import { useState, useEffect } from 'react';
 import { leerCarrito, guardarCarrito } from './utils/storage';
 
@@ -70,6 +73,9 @@ function App() {
           } />
           
           <Route path="/contacto" element={<Contact />} />
+          <Route path="/medidor" element={<Medidor />} />
+          <Route path="/carga" element={<Carga agregarAlCarrito={agregarAlCarrito} />} />
+          <Route path="/verificar" element={<Verificar />} />
           <Route path="/admin" element={<Admin />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
